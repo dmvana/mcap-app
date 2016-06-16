@@ -1,6 +1,8 @@
+<h1>Products</h1>
+<%= link_to "Create a new product", "/products/new" %>
 <div>
 <% @products.each do |product| %>
-  <h2><a href="/products/<%= product.id %>"><%= product.name %></a></h2>
+  <!-- <h2><a href="/products/<%= product.id %>"><%= product.name %></a></h2> -->
   <h2><%= link_to product.name, "/products/#{product.id}" %></h2>
   <p> Price: <%= product.price %></p>
   <p> Image: <%= product.image %></p>

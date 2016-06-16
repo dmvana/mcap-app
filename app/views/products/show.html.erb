@@ -3,5 +3,6 @@
 <h3>The price is <%= @product.price %></h3>
 <p> Image <%= @product.image %></p>
 <p> Description: <%= @product.description %></p>
-<a href= "/products"> Back to all products</a>
+<!-- <a href= "/products"> Back to all products</a> -->
+<%=link_to "Edit this product", "/products/#{@product.id}/edit" %>
 <%=link_to "Back to all products", "/products" %>
