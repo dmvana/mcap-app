@@ -1,6 +1,6 @@
 <h1> Create a product </h1>
 
-<%= form_tag '/show_create_product_result', method: :post do %>
+<%= form_tag '/products', method: :post do %>
   <div class="form-group">
     <%= label_tag :name %>
     <%= text_field_tag :name, nil, class: "form-control" %>

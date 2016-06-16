@@ -1,9 +1,5 @@
 class ProductsController < ApplicationController
 
-  def home
-    @product = Product.last
-  end
-
   def index
     @products = Product.all
   end
@@ -13,10 +9,10 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: product_id)
   end
 
-  def create_product 
+  def new 
   end
 
-  def show_create_product_result
+  def create
     @product = Product.create(
       name: params[:name],
       price: params[:price],
