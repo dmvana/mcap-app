@@ -19,7 +19,9 @@ class ProductsController < ApplicationController
       image: params[:image],
       description: params[:description]
     )
+    flash[:success] = "Product was sucessfully added!"
     redirect_to '/products'
+
   end
 
   def edit
@@ -34,13 +36,14 @@ class ProductsController < ApplicationController
       image: params[:image],
       description: params[:description]
       )
+    flash[:success] = "Product was sucessfully edited!"
     redirect_to "/products/#{product.id}"
   end
 
   def destroy
     product = Product.find_by(id: params[:id])
     product.destroy
-
+    flash[:danger] = "Product was succesfully deleted"
     redirect_to '/products'
   end
 end
