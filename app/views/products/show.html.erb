@@ -4,5 +4,9 @@
 <p> Image <%= @product.image %></p>
 <p> Description: <%= @product.description %></p>
 <!-- <a href= "/products"> Back to all products</a> -->
+
 <%=link_to "Edit this product", "/products/#{@product.id}/edit" %>
+
+<%=link_to "Delete this product", "/products/#{@product.id}/", method: :delete %>
+
 <%=link_to "Back to all products", "/products" %>

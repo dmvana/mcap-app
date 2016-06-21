@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(
+    Product.create(
       name: params[:name],
       price: params[:price],
       image: params[:image],
@@ -27,13 +27,20 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find_by(id: params[:id])
-    @product.update(
+    Product.find_by(id: params[:id])
+      Product.update(
       name: params[:name],
       price: params[:price],
       image: params[:image],
       description: params[:description]
       )
-    redirect_to '/products/#{@product.id}'
+    redirect_to "/products/#{@product.id}"
+  end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+
+    redirect_to '/products'
   end
 end
