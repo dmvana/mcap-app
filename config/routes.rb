@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/products/:id/edit' => 'products#edit'
   patch '/products/:id' => 'products#update'
   delete '/products/:id' => 'products#destroy'
+  post '/search' => 'products#search'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

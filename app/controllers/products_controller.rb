@@ -2,11 +2,21 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-  end
+    if params[:sort] && params[:sort_order]
+      @products = Product.order(params[:sort] => params[:sort_order])
+    end
+    if params[:disocunt]
+      @products = Product.where("price < ?", 10)
+    end
+  end  
 
   def show
-    product_id = params[:id]
-    @product = Product.find_by(id: product_id)
+    if params[:id] == "random"
+      products = Product.all
+      @product = products.sample
+    else
+    @product = Product.find_by(id: params[:id])
+    end 
   end
 
   def new 

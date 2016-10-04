@@ -5,6 +5,7 @@
       <div class="well">
         <h2><%= link_to product.name, "/products/#{product.id}" %></h2>
         <p> Price: <%= product.price %></p>
+        <p> <%= product.sale_message %>
         <p> Description: <%= product.description %><p>
         <img src="<%= product.image %>" alt="">
       </div>
